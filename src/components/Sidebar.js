@@ -3,12 +3,11 @@ import Links from './Links'
 import { IoMdClose } from 'react-icons/io'
 import styled from 'styled-components'
 import { setColor } from '../styles/'
-import SocialLinks from '../constants/socialLinks'
 
 const Sidebar = ({ isOpen, toggleSidebar }) => (
     <Wrapper 
         className={ `${ isOpen ? 'sidebar showSidebar' : 'sidebar' }` }
-        aria-label="Main sidebar containing navigation links and some information"
+        aria-label="Main sidebar containing navigation links"
         aria-hidden={ `${ ! isOpen }` }
     >
       <div className="btn-container">
@@ -19,21 +18,18 @@ const Sidebar = ({ isOpen, toggleSidebar }) => (
       <div className="sidebar-content">
           <Links styleClass={`${isOpen ? 'sidebar-links' : ''}`} />
       </div>
-      <div className="links-container">
-          <SocialLinks styleClass="social-icons-sidebar" />
-      </div>
       <footer>
-          <div>© 2021 Erica Legrand. All rights reserved</div> 
+          <div>© 2021 DeRossi. All rights reserved</div> 
       </footer>
     </Wrapper>
 )
 
 const Wrapper = styled.aside`
     &.sidebar {
-      background-color: ${ setColor.sigma };
+      background-color: ${setColor.sigma};
       display: grid;
       grid-auto-flow: row;
-      grid-template-rows: auto auto auto 1fr;
+      grid-template-rows: auto auto 1fr;
       height: 100vh;
       left: 0;
       min-width: 30rem;
@@ -46,7 +42,7 @@ const Wrapper = styled.aside`
       z-index: 999;
 
       a {
-        color: ${ setColor.delta_1 };
+        color: ${setColor.delta_1};
         font-size: 1.7rem;
       }
 
@@ -58,7 +54,7 @@ const Wrapper = styled.aside`
       .close-btn {
         background-color: transparent;
         border: none;
-        color: ${ setColor.delta_1 };
+        color: ${setColor.delta_1};
         cursor: pointer;
         font-size: 3rem;
       }

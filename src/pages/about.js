@@ -1,32 +1,74 @@
 import React from 'react';
-import Accordion from '../components/Accordion'
 import Background from '../components/Background'
 import Services from '../components/Services'
-import Testimonials from '../components/Testimonials'
-import faq from '../constants/questions'
-import { graphql } from 'gatsby'
-import Image from "gatsby-image"
+import facts from '../constants/facts'
+import {graphql} from 'gatsby'
 import Layout from '../components/Layout'
-import { Link } from 'gatsby'
 import SEO from "../components/SEO"
 import styled from 'styled-components'
-import { setBreakpoint, setGrid } from '../styles/'
-import Team from '../components/Team'
+import {setBreakpoint, setGrid} from '../styles/'
 import Title from '../components/Title'
 
+const about = ({data}) => {
+    return (
+      <Layout>
+        <SEO 
+          description="About web dev"
+          title="About"
+        />
+
+        <Wrapper>
+          <Background styleClass="banner">
+            <div className="container center">
+              <Title title="About Us" styleClass="center sigma" />
+            </div>
+          </Background>
+
+          <div className="container p-y">
+            <Services facts={facts} />
+          </div>
+
+          <div className="line"></div>
+
+          <div className="container p-y">
+          <div className="columns">
+              <div>
+                <h4>MISSION</h4>
+              </div>
+              <div>
+                <p className="h3 max-width-2">Strive for the perfect balance between form and function.</p>
+                <p className="h3 max-width-2">Constructive collegiality is key to the stimulation of ideas.Strive for the perfect balance between form and function.</p>
+              </div>
+            </div>
+              </div>
+
+          <div className="line"></div>
+
+          <section className="container p-y">
+            <div className="columns">
+              <div>
+                <h4>PRINCIPLES</h4>
+              </div>
+              <div className="principles">
+                <div>Strive for the perfect balance between form and function.</div>
+                <div>Communicate with clarity, be complex but never complicated.</div>
+                <div>Constructive collegiality is key to the stimulation of ideas.</div>
+                <div>Question standard norms before choosing to obey them.</div>
+                <div>Embrace the difficult decision that drive creativity forward.</div>
+                <div>Trust in collaboration the hallmark of our work.</div>
+              </div>
+            </div>
+          </section>
+      </Wrapper>
+    </Layout>
+  )
+}
 
 export const query = graphql`
   {
     img1: file(relativePath: {eq: "about-4.jpg"}) {
       childImageSharp {
-        fluid(quality: 100, maxWidth: 6000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    img2: file(relativePath: {eq: "about-1.jpg"}) {
-      childImageSharp {
-        fluid {
+        fluid(quality: 100, maxWidth: 1200) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -34,76 +76,28 @@ export const query = graphql`
   }
 `
 
-const about = ({ data }) => {
-    return (
-      <Layout>
-        <SEO 
-          description="About web dev"
-          title="About"
-        />
-        <Wrapper>
-          <Background styleClass="banner">
-              <div className="container center">
-                <Title title="About Us" styleClass="center sigma" />
-              </div>
-          </Background>
-
-          <div className="container p-y">
-            <Services />
-          </div>
-
-          <section className="container section-padding">
-              <Title 
-                  title="Meet the team" 
-                  text="Cloud bread live-edge direct trade deep"
-                  left
-              />
-          </section>
-
-          <section className="section-bg pi">
-            <div className="container p-y">
-              <Testimonials />
-            </div>
-          </section>
-      </Wrapper>
-    </Layout>
-  );
-};
-
 const Wrapper = styled.article`
-    margin-top: 6rem;
+  margin-top: 6rem;
 
-   .columns-2 {
-    display: grid;
-    grid-gap: 4rem;
-    grid-template-columns: repeat( auto-fit, minmax( 30rem, 1fr ) );
-    margin-bottom: 4rem;
-    
-    h2 {
-      margin: 3rem 0 2.5rem 0;
+  @media screen and ( min-width: ${ setBreakpoint.small } ) {
+    .columns {
+      display: grid;
+      grid-gap: 4rem;
+      grid-template-columns: 1fr 3fr;
+    }
+  
+    .principles {
+        ${setGrid()}
     }
   }
 
-  .principle {
-    @media screen and ( min-width: ${ setBreakpoint.small } ) {
-      ${setGrid()}
-    }
+  p:last-child {
+    margin-bottom: 0;
   }
 
-  @media screen and ( max-width: ${ setBreakpoint.medium } ) {
-    .order-1 { 
-      order: 1; 
-    }
-
-    .order-2 { 
-      order: 2;
-    }   
-  }
-
-  .content {
-    display: grid;
-    grid-template-columns: repeat( auto-fit, minmax( 32rem, 1fr ));
-    grid-gap: 3rem;
+  h4 {
+    margin-top: 5px;
+    margin-bottom: 3rem;
   }
 `
 

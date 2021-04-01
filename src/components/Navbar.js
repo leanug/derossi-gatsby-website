@@ -26,7 +26,7 @@ const Navbar = ({ toggleSidebar }) => {
   )
 }
 
-const Nav = styled.nav`
+const Nav = styled.header`
     background: ${setColor.delta_1};
     display: flex;
     justify-content: center;

@@ -1,20 +1,15 @@
 import React from 'react';
 import people from '../../constants/people'
 import Person from './Person'
-import { setGridGap, setRadius } from '../../styles/'
+import {setGrid} from '../../styles/'
 import styled from 'styled-components'
-
-const Wrapper = styled.div`
-    display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(32rem, 1fr));
-    ${setGridGap.alpha};
-`
 
 const Team = () => (
     <Wrapper>
-        {people.map( person => {
+        {people.map((person, i) => {
             return (
-                <Person 
+                <Person
+                    key={i}
                     img={ person.img }
                     name={ person.name }
                     position={ person.position }
@@ -24,5 +19,9 @@ const Team = () => (
         })}
     </Wrapper>
 )
+
+const Wrapper = styled.div`
+    ${setGrid({gap: '2rem', min: '20rem'})}
+`
 
 export default Team;

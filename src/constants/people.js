@@ -27,18 +27,6 @@ const people = [
         position: 'Estates manager & Co-founder',
         text: 'Ennui slow-carb hashtag farm-to-table yr adaptogen gochujang. Pok pok blue bottle iceland gastropub.'
     },
-    {
-        img: img1,
-        name: 'Anna Kahn',
-        position: 'Architectural technologist',
-        text: 'Ennui slow-carb hashtag farm-to-table yr adaptogen gochujang. Pok pok blue bottle iceland gastropub.'
-    },
-    {
-        img: img3,
-        name: 'Emma Gonzalez',
-        position: 'Product designer & Co-founder',
-        text: 'Ennui slow-carb hashtag farm-to-table yr adaptogen gochujang. Pok pok blue bottle iceland gastropub.'
-    },
 ]
 
 export default people

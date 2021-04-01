@@ -1,6 +1,5 @@
 import React from 'react'
 import Hero from '../components/Hero'
-import Testimonials from '../components/Testimonials'
 import Layout from '../components/Layout'
 import Portfolio from '../components/Portfolio'
 import InfoSwitcher from '../components/InfoSwitcher'
@@ -19,8 +18,6 @@ const IndexPage = ({data}) => {
   const {portfolio: {nodes:portfolio}} = data
 
   return (
-  
-
     <Layout>
       <SEO 
         description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, suscipit?"
@@ -33,18 +30,16 @@ const IndexPage = ({data}) => {
           <div className="container">
             <div className="max-width-1 mx-center">
               <Title title="Creating Vibrant Spaces & Communites" styleClass="center sigma" />
-              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia. </p>
+              <p className="mar-top">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia. </p>
             </div>
           </div>
         </section>
 
         <section className="container p-y">
           <div className="max-width-2 mx-center">
-
-          <Title title="A PLACE TO CALL HOME" styleClass="center" />
-          <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. </p>
+            <Title title="A PLACE TO CALL HOME" styleClass="center" />
+            <p className="mar-top">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. </p>
           </div>
-
         </section>
 
         <section className="section-bg pi">
@@ -60,7 +55,7 @@ const IndexPage = ({data}) => {
         <div className="container p-y">
           <div className="max-width-2 mx-center">
             <Title title="Meet Our Team" styleClass="center" />
-            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. </p>
+            <p className="mar-top">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. </p>
           </div>
         </div>
 
@@ -74,7 +69,7 @@ const IndexPage = ({data}) => {
           <div className="container">
             <div className="max-width-2 mx-center">
               <Title title="Creating Vibrant Spaces & Communites" styleClass="center sigma" />
-              <p className="max-width-1 mx-center">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia. </p>
+              <p className="mar-top max-width-1 mx-center">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia. </p>
             </div>
           </div>
         </section>
@@ -85,7 +80,7 @@ const IndexPage = ({data}) => {
             <div className="content">
               <div>
                 <Title title="A PLACE TO CALL HOME" styleClass="center" />
-                <p>At vero eos et accusamus et iusto odio dignissimos ducimus<br /> qui blanditiispraesentium voluptatum. </p>
+                <p  className="mar-top">At vero eos et accusamus et iusto odio dignissimos ducimus<br /> qui blanditiispraesentium voluptatum. </p>
                 <div className="line"></div>
                 <ul>
                     <li>438 Marine Parade</li>
@@ -141,9 +136,13 @@ export const query = graphql`
   }
 `
 
-const Wrapper = styled.div`
+const Wrapper = styled.article`
     .section-bg {
         ${ setSectionBg('grey') }
+    }
+
+    .mar-top {
+      margin-top: 3rem;
     }
 
     .section {

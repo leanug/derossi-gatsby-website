@@ -1,7 +1,7 @@
 import React from 'react';
 import links from '../constants/links'
 import { Link } from 'gatsby'
-import { setColor, setGridGap } from "../styles"
+import { setGridGap } from "../styles"
 import styled from 'styled-components'
 
 const Links = ({styleClass}) => {
@@ -17,11 +17,12 @@ const Links = ({styleClass}) => {
     );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.nav`
     display: grid;
     ${ setGridGap.beta };
     grid-template-columns: repeat(auto-fill, 1fr);
     text-transform: uppercase;
+    width: 100%;
 
     &.navbar-links {
         grid-auto-flow: column;

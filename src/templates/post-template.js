@@ -3,7 +3,6 @@ import Layout from '../components/Layout'
 import styled from 'styled-components'
 import Image from 'gatsby-image'
 import { 
-  setPostMaxWidth, 
   setColor, 
   setRadius } from '../styles/'
 import { graphql } from 'gatsby'

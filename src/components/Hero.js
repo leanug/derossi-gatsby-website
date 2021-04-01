@@ -1,7 +1,5 @@
 import React from 'react';
 import Background from './Background'
-import { Link } from 'gatsby'
-import { setColor } from '../styles'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -14,8 +12,7 @@ const Hero = () => {
 
     return (
         <Wrapper>
-            <Background image={ fluid } >
-            </Background>
+            <Background image={ fluid } />
         </Wrapper>
     );
 };
@@ -37,7 +34,7 @@ const Wrapper = styled.div`
         align-items: center;
         display: flex;
         height: 100vh;
-        width: 100vw;
+        width: 100%;
         justify-content: center;
         flex-direction: column;
 
@@ -45,12 +42,6 @@ const Wrapper = styled.div`
             line-height: 1.25;
             letter-spacing: 3px;
             margin-bottom: 2rem;
-        }
-
-        .content {
-            margin: 2rem 0 3rem 0;
-            max-width: 90vw;
-            text-align: center;
         }
 
         @media (min-width: 800px) {

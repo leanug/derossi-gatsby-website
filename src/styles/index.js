@@ -5,7 +5,7 @@
  export const setColor = {
     alpha  : "#FF1010", // Red
     beta   : "#0080FF", // Blue
-    gamma  : "#FFD948", // Yellow
+    gamma  : "#47B475", // Green
     delta_1: "#1F1F1F", // Dark 1
     delta_2: "#292929", // Dark 2
     delta_3: "#666666", // Dark 3
@@ -66,13 +66,13 @@ export const setTransition = ({
 }
 
 export const setGrid = ({
-    gap = '2',
+    gap = '2rem',
     min = '30rem',
     max = '1fr'
 } = {}) => {
     return `
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(${min}, ${max}));
-        grid-gap: ${gap}rem;
+        grid-gap: ${gap};
     `
 }

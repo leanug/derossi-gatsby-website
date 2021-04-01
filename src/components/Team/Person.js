@@ -27,7 +27,6 @@ const Wrapper = styled.div`
     }
 
     .image {
-        ${setRadius.alpha};
         width: 100%;
     }
 `

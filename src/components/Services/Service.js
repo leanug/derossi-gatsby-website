@@ -1,17 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
-import { setColor, setRadius } from '../../styles/'
 
-const Service = () => (
+const Service = ({fact}) => (
     <Wrapper>
-        <h3>John Doe</h3> 
-        <p>Cloud bread live-edge direct trade deep v yr gentrify. Bitters williamsburg air plant</p> 
-        <p>Cloud bread live-edge direct trade deep v yr gentrify. Bitters williamsburg air plant</p>  
+        <h2>{fact.title}</h2> 
+        <p>{fact.text}</p> 
     </Wrapper>
 )
 
 const Wrapper = styled.div`
-    h3 {
+    h2 {
         margin-bottom: 3rem;
     }
 

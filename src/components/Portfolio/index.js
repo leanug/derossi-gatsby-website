@@ -16,9 +16,13 @@ const index = ({portfolio}) => {
 const Wrapper = styled.div`
   @media screen and ( min-width: ${ setBreakpoint.small } ) {
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax( 40rem, 1fr ));
     grid-template-areas: "a b"
-                         "a c";
+                         "a c"
+                         "d e"
+                         "f g"
+                         "h i"
+                         "j k"
+                         "l m";
     & > div:first-child {
       grid-area: a;
     }
@@ -27,6 +31,36 @@ const Wrapper = styled.div`
     }
     & > div:nth-child(3) {
       grid-area: c;
+    }
+    & > div:nth-child(4) {
+      grid-area: d;
+    }
+    & > div:nth-child(5) {
+      grid-area: e;
+    }
+    & > div:nth-child(6) {
+      grid-area: f;
+    }
+    & > div:nth-child(7) {
+      grid-area: g;
+    }
+    & > div:nth-child(8) {
+      grid-area: h;
+    }
+    & > div:nth-child(9) {
+      grid-area: i;
+    }
+    & > div:nth-child(10) {
+      grid-area: j;
+    }
+    & > div:nth-child(11) {
+      grid-area: k;
+    }
+    & > div:nth-child(12) {
+      grid-area: l;
+    }
+    & > div:nth-child(13) {
+      grid-area: m;
     }
   }
 `
